@@ -47,7 +47,7 @@
                 <p>
                   <ul>
 		  	<li><span style="font-weight:bold;">[日期]</span> todo </li>
-		 	<li><span style="font-weight:bold;">[2025.7.04</span> 欢迎访问我的个人主页！</li>
+		 	<li><span style="font-weight:bold;">[2025.7.04]</span> 欢迎访问我的个人主页！</li>
 		  </ul>
                 </p>
               </td>
@@ -57,11 +57,75 @@
 
 		  
 	<table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-	    <tr>
+	  <tr>
 	    <td style="padding:16px;width:100%;vertical-align:middle">
 	      <h2>Recent Publication</h2>
 	    </td>
 	  </tr>
+
+
+		<!-- START: Publication Entry with Video on Hover -->
+		<tr onmouseout="paper_name_stop()" onmouseover="paper_name_start()" bgcolor="#ffffd0">
+		  <!-- 
+		    - onmouseover/onmouseout: 触发JS函数来控制视频显示/隐藏。
+		    - bgcolor="#ffffd0": 可选，为重要的论文添加淡黄色背景高亮。
+		  -->
+		
+		  <!-- 左侧: 视觉材料 -->
+		  <td style="padding:16px;width:20%;vertical-align:middle">
+		    <div class="one">
+		      <!-- 视频层: 默认隐藏，鼠标悬浮时显示 -->
+		      <div class="two" id='paper_name_image'>
+		        <video width="100%" height="100%" muted autoplay loop>
+		          <!-- 替换成你的视频文件路径 -->
+		          <source src="images/your_video.mp4" type="video/mp4">
+		          Your browser does not support the video tag.
+		        </video>
+		      </div>
+		      <!-- 静态图层: 默认显示 -->
+		      <img src='images/your_static_image.jpg' width="160">
+		    </div>
+		    <!-- JavaScript: 控制视频层的显示和隐藏 -->
+		    <script type="text/javascript">
+		      // 把下面的 "paper_name" 替换成一个独一无二的名字，例如论文的简称 (nerf, zipnerf)
+		      function paper_name_start() {
+		        document.getElementById('paper_name_image').style.opacity = "1";
+		      }
+		      function paper_name_stop() {
+		        document.getElementById('paper_name_image').style.opacity = "0";
+		      }
+		      paper_name_stop();
+		    </script>
+		  </td>
+		
+		  <!-- 右侧: 文字描述 -->
+		  <td style="padding:8px;width:80%;vertical-align:middle">
+		    <a href="【你的项目主页链接】">
+		      <span class="papertitle">【你的论文标题】</span>
+		    </a>
+		    <br>
+		    <!-- 作者列表: 用 <strong> 标签加粗你自己的名字 -->
+		    <a href="【作者1主页】">【作者一】</a>,
+		    <strong>【你的名字】</strong>,
+		    <a href="【作者3主页】">【作者三】</a>
+		    <br>
+		    <!-- 发表信息: 如果有特殊荣誉，可以用 <font> 标签标红 -->
+		    <em>【会议/期刊名称】</em>, 【年份】 &nbsp; <font color="red"><strong>(Oral Presentation)</strong></font>
+		    <br>
+		    <!-- 资源链接 -->
+		    <a href="【项目主页链接】">Project Page</a> /
+		    <a href="【论文PDF或ArXiv链接】">arXiv</a> /
+		    <a href="【视频链接】">Video</a> /
+		    <a href="【代码仓库链接】">Code</a>
+		    <p></p>
+		    <p>
+		    【这里是一段关于你论文的简短介绍，说明它的主要贡献和内容。】
+		    </p>
+		  </td>
+		</tr>
+		<!-- END: Publication Entry with Video on Hover -->
+
+
 	</tbody></table>
 
 
